@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+
+sourceCompatibility = 1.8
+ext.depVersions = [
+        spring: '5.2.11.RELEASE',
+        junit : '4.12',
+        aspcetJ : '1.9.6',
+        slfj : '1.7.30'
+]
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.springframework', name: 'spring-core', version: depVersions.spring
+    compile group: 'org.springframework', name: 'spring-context', version: depVersions.spring
+    compile group: 'org.aspectj', name: 'aspectjweaver', version: depVersions.aspcetJ
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
+    compile group: 'org.slf4j', name: 'slf4j-log4j12', version: depVersions.slfj
+
+    testCompile group: 'junit', name: 'junit', version: depVersions.junit
+
+
+
+}
